@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 
 export default Component.extend({
   minRating: 1,
-  maxRating: 4,
+  maxRating: 5,
     
   getRatingName: function() {
     let name = "";
@@ -20,6 +20,9 @@ export default Component.extend({
       break;
     case 4:
       name =  "Exceptional";
+      break;
+    case 5:
+      name = "Legendary";
       break;
     }
     return name;
