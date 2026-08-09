@@ -123,6 +123,11 @@ export default Component.extend({
   onItalic() {
     this.addFormatCodeBracket("_", "_");
   },
+
+  @action
+  onStrikethrough() {
+    this.addFormatCodeBracket("~~", "~~");
+  },
   
   @action
   onHeading() {
