@@ -98,10 +98,42 @@ export default Component.extend({
       if (event.ctrlKey || event.metaKey) {
         
         // Needed because onEnter is optional - we don't want to trigger it if it's not set.
-        //if (this.onEnter) {
-        //  this.onEnter();
-        //}      
+        if (this.onEnter) {
+          this.onEnter();
+        }
+        event.preventDefault();
+      }
+    }
+  },
+
+  @action
+  keyDown(event) {
+    if (event.key == 'b') {
+      if (event.ctrlKey || event.metaKey) {
+        
         this.addFormatCodeBracket("**", "**");
+        event.preventDefault();
+      }
+    }
+  },
+
+  @action
+  keyDown(event) {
+    if (event.key == 'i') {
+      if (event.ctrlKey || event.metaKey) {
+        
+        this.addFormatCodeBracket("*", "*");
+        event.preventDefault();
+      }
+    }
+  },
+
+  @action
+  keyDown(event) {
+    if (event.key == '-') {
+      if (event.ctrlKey || event.metaKey) {
+        
+        this.addFormatCodeBracket("~~", "~~");
         event.preventDefault();
       }
     }
