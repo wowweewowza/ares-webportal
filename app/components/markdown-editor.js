@@ -98,10 +98,10 @@ export default Component.extend({
       if (event.ctrlKey || event.metaKey) {
         
         // Needed because onEnter is optional - we don't want to trigger it if it's not set.
-        if (this.onEnter) {
-          this.onEnter();
-        }      
-        
+        //if (this.onEnter) {
+        //  this.onEnter();
+        //}      
+        this.addFormatCodeBracket("**", "**");
         event.preventDefault();
       }
     }
