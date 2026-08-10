@@ -40,6 +40,7 @@ export default Component.extend({
   spendFocus() {
     let api = this.gameApi;
     let focusReason = this.focusReason;
+    let focusAmount = this.focusAmount;
     
     this.set('selectSpendFocus', false);
     this.set('focusReason', null);
