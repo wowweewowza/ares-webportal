@@ -1,5 +1,7 @@
 <li><button {{on 'click' (fn this.setSelectSkillRoll true)}} class="dropdown-item">Roll Ability</button></li>
 <li><button {{on 'click' (fn this.setSelectSpendLuck true)}} class="dropdown-item">Spend Luck</button></li>
+<li><button {{on 'click' (fn this.setSelectSpendFocus true)}} class="dropdown-item">Spend Focus</button></li>
+<li><button {{on 'click' (fn this.setSelectResetFocus true)}} class="dropdown-item">Reset Focus</button></li>
 
 {{#if this.scene.fs3combat_enabled}}
   {{#if (not this.scene.combat)}}
@@ -10,6 +12,19 @@
 <BsModalSimple @title="Spend a Luck Point" @closeTitle="Cancel" @submitTitle="Spend" @size={{null}} @fade={{true}} @open={{this.selectSpendLuck}} @onSubmit={{this.spendLuck}} @onHide={{(fn this.setSelectSpendLuck false)}}>
   
   <b>Reason:</b> <Input @type="text" size={{25}} id="luckReason" @enter={{this.spendLuck}} @value={{this.luckReason}} />
+
+</BsModalSimple>
+
+<BsModalSimple @title="Spend a Focus Point" @closeTitle="Cancel" @submitTitle="Spend" @size={{null}} @fade={{true}} @open={{this.selectSpendFocus}} @onSubmit={{this.spendFocus}} @onHide={{(fn this.setSelectSpendFocus false)}}>
+  
+  <b>Amount:</b> <Input @type="number" size={{25}} id="focusAmount" @enter={{this.spendFocus}} @value={{this.focusAmount}} />
+  <b>Reason:</b> <Input @type="text" size={{25}} id="focusReason" @enter={{this.spendFocus}} @value={{this.focusReason}} />
+
+</BsModalSimple>
+
+<BsModalSimple @title="Reset Focus Points" @closeTitle="No" @submitTitle="Yes" @size={{null}} @fade={{true}} @open={{this.selectResetFocus}} @onSubmit={{this.resetFocus}} @onHide={{(fn this.setSelectResetFocus false)}}>
+  
+  <b>Are you sure?</b>
 
 </BsModalSimple>
 
