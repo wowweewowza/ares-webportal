@@ -99,5 +99,15 @@ export default Component.extend({
   @action
   setSelectSpendLuck(value) {
     this.set('selectSpendLuck', value);
+  },
+
+  @action
+  setSelectSpendFocus(value) {
+    this.set('selectSpendFocus', value);
+  },
+
+  @action
+  setSelectResetFocus(value) {
+    this.set('selectResetFocus', value);
   }
 });
