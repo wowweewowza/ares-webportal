@@ -4,8 +4,11 @@ import { action } from '@ember/object';
 
 export default Component.extend({
   selectSpendLuck: false,
+  selectSpendFocus: false,
   selectSkillRoll: false,
+  selectResetFocus: false,
   luckReason: null,
+  focusReason: null,
   tagName: '',
   gameApi: service(),
   flashMessages: service(),
@@ -25,6 +28,43 @@ export default Component.extend({
 
     api.requestOne('spendLuck', { scene_id: this.get('scene.id'),
     reason: luckReason, sender: this.get('scene.poseChar.name') }, null)
+    .then( (response) => {
+      if (response.error) {
+        return;
+      }
+    });
+  },
+
+  @action
+  spendFocus() {
+    let api = this.gameApi;
+    let focusReason = this.focusReason;
+    
+    this.set('selectSpendFocus', false);
+    this.set('focusReason', null);
+          
+    if (!focusReason) {
+      this.flashMessages.danger("You haven't given a reason for your focus spend.");
+      return;
+    }
+
+    api.requestOne('spendFocus', { scene_id: this.get('scene.id'),
+    reason: focusReason, sender: this.get('scene.poseChar.name') }, null)
+    .then( (response) => {
+      if (response.error) {
+        return;
+      }
+    });
+  },
+
+  @action
+  resetFocus() {
+    let api = this.gameApi;
+    
+    this.set('selectResetFocus', false);
+
+    api.requestOne('resetFocus', { scene_id: this.get('scene.id'),
+    sender: this.get('scene.poseChar.name') }, null)
     .then( (response) => {
       if (response.error) {
         return;
