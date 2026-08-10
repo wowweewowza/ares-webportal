@@ -9,6 +9,7 @@ export default Component.extend({
   selectResetFocus: false,
   luckReason: null,
   focusReason: null,
+  focusAmount: null,
   tagName: '',
   gameApi: service(),
   flashMessages: service(),
@@ -42,14 +43,20 @@ export default Component.extend({
     
     this.set('selectSpendFocus', false);
     this.set('focusReason', null);
+    this.set('focusAmount', null);
           
     if (!focusReason) {
       this.flashMessages.danger("You haven't given a reason for your focus spend.");
       return;
     }
 
+    if (!focusAmount) {
+      this.flashMessages.danger("You haven't given a reason for your focus spend.");
+      return;
+    }
+
     api.requestOne('spendFocus', { scene_id: this.get('scene.id'),
-    reason: focusReason, sender: this.get('scene.poseChar.name') }, null)
+    reason: focusReason, amount: focusAmount, sender: this.get('scene.poseChar.name') }, null)
     .then( (response) => {
       if (response.error) {
         return;

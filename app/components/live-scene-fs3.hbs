@@ -22,5 +22,11 @@
 
 </BsModalSimple>
 
+<BsModalSimple @title="Reset Focus Points" @closeTitle="No" @submitTitle="Yes" @size={{null}} @fade={{true}} @open={{this.selectResetFocus}} @onSubmit={{this.resetFocus}} @onHide={{(fn this.setSelectResetFocus false)}}>
+  
+  <b>Are you sure?</b>
+
+</BsModalSimple>
+
 
 <Fs3Roll @scene={{this.scene}} @destinationType="scene" @abilities={{this.abilities}} @selectSkillRoll={{this.selectSkillRoll}} />
