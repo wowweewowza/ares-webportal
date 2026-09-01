@@ -325,7 +325,6 @@ export default Controller.extend(AuthenticatedController, SceneUpdate, {
           return;
         }
         set(channel, 'messages', response.messages);
-        set(channel, 'who', response.who);
         set(channel, 'lazy_loaded', false);
         this.updateChannel(channel);
       });
