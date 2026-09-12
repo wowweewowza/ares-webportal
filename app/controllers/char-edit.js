@@ -77,6 +77,8 @@ export default Controller.extend({
             descs: descs,
             custom: custom,
             roster: roster,
+            is_npc: this.get('model.char.is_npc'),
+            is_playerbit: this.get('model.char.is_playerbit'),
             roles: this.get('model.char.roles') || []
         };
     }, 
