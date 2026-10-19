@@ -133,6 +133,20 @@ export default Component.extend({
       }
     }
   },
+
+  checkAgeAp: function(age, limits) {
+    if (!age){
+      return;
+    }
+
+    for (var upper_limit in limits) {
+      let limit = limits[upper_limit];
+      if (age <= limit) {
+        this.addCharError(`You can only have ${limit} ability points at ${age} years old.`);
+      }
+    }
+  }
+  ,
     
   validateChar: function() {
     this.set('charErrors', A());
@@ -163,6 +177,10 @@ export default Component.extend({
       this.addCharError(`You can only spend ${maxAdvantages} points in advantages.  You have spent ${totalAdvantages}.`);
     }
         
+    let charAge = this.get('model.char.age')
+    let apAgeCap = this.get('model.cgInfo.fs3.ap_age_caps');
+    this.checkAgeAp(charAge, apAgeCap)
+    
     let maxAp = this.get('model.cgInfo.fs3.max_ap');
     let totalAp = totalAttrs + totalSkills;
     if (totalAp > maxAp) {
