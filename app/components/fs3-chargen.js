@@ -139,10 +139,12 @@ export default Component.extend({
       return;
     }
 
-    for (var upper_limit in limits) {
-      let limit = limits[upper_limit];
-      if (age <= limit) {
-        this.addCharError(`You can only have ${limit} ability points at ${age} years old.`);
+    for (var limit in limits) {
+      let comp_age = limit[0];
+      let l = limit[1];
+      if (age <= comp_age) {
+        this.addCharError(`You can only have ${l} ability points at ${age} years old.`);
+        break;
       }
     }
   }
