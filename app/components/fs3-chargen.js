@@ -178,8 +178,8 @@ export default Component.extend({
     this.addCharError(`charAge is a ${typeof charAge}` and ${charAge})
     let apAgeCap = this.get('model.cgInfo.fs3.ap_age_caps');
     this.addCharError(`apAgeCap is a ${typeof apAgeCap}` and ${apAgeCap})
-    let maxAp = this.getAgeMax(charAge, apAgeCap)
-    
+    //let maxAp = this.getAgeMax(charAge, apAgeCap)
+    let maxAp = 30
     //let maxAp = this.get('model.cgInfo.fs3.max_ap');
     let totalAp = totalAttrs + totalSkills;
     if (totalAp > maxAp) {
