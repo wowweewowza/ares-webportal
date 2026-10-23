@@ -24,7 +24,11 @@
             <label for="type-select">Choose Type:</label>
             <select id="type-select" onchange="changeLayer('type', this.value)">
                 <option value="">None</option>
+                <option value="/game/uploads/warning_symbols/biological.png">Biological</option>
+                <option value="/game/uploads/warning_symbols/kinetic.png">Kinetic</option>
                 <option value="/game/uploads/warning_symbols/psychological.png">Psychological</option>
+                <option value="/game/uploads/warning_symbols/spatial.png">Spatial</option>
+                <option value="/game/uploads/warning_symbols/temporal.png">Temporal</option>
             </select>
         </div>
 
@@ -33,7 +37,11 @@
             <label for="containability-select">Choose Containability:</label>
             <select id="containability-select" onchange="changeLayer('containability', this.value)">
                 <option value="">None</option>
+                <option value="/game/uploads/warning_symbols/containability_1.png">Level 1</option>
+                <option value="/game/uploads/warning_symbols/containability_2.png">Level 2</option>
+                <option value="/game/uploads/warning_symbols/containability_3.png">Level 3</option>
                 <option value="/game/uploads/warning_symbols/containability_4.png">Level 4</option>
+                <option value="/game/uploads/warning_symbols/containability_5.png">Level 5</option>
             </select>
         </div>
 
@@ -43,6 +51,10 @@
             <select id="ease_of_use-select" onchange="changeLayer('ease_of_use', this.value)">
                 <option value="">None</option>
                 <option value="/game/uploads/warning_symbols/ease_of_use_1.png">Level 1</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_2.png">Level 2</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_3.png">Level 3</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_4.png">Level 4</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_5.png">Level 5</option>
             </select>
         </div>
 
@@ -51,7 +63,11 @@
             <label for="danger_level-select">Choose Danger Level:</label>
             <select id="danger_level-select" onchange="changeLayer('danger_level', this.value)">
                 <option value="">None</option>
+                <option value="/game/uploads/warning_symbols/danger_level_1.png">Level 1</option>
                 <option value="/game/uploads/warning_symbols/danger_level_2.png">Level 2</option>
+                <option value="/game/uploads/warning_symbols/danger_level_3.png">Level 3</option>
+                <option value="/game/uploads/warning_symbols/danger_level_4.png">Level 4</option>
+                <option value="/game/uploads/warning_symbols/danger_level_5.png">Level 5</option>
             </select>
         </div>
         <button onclick="downloadSymbol()" class="btn btn-primary">Download Final Picture</button>
