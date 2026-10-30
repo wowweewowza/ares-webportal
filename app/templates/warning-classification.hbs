@@ -1,0 +1,75 @@
+{{page-title 'Warning Classification'}}
+
+<h1>Warning Classification</h1>
+
+<div class="paperdoll-wrap">
+
+    <div class="sym-container">
+        <div id="sym-canvas">
+            <!--This is the base, it always stays-->
+            <img id="base" class="sym-layer" src="/game/uploads/warning_symbols/type.png">
+
+            <!--This is the symbol in the center-->
+            <img id="type" class="sym-layer" src="/game/uploads/warning_symbols/blank.png" alt="">
+            <!--These are the self described classification triangles, rated 1-5. Base name should not change.-->
+            <img id="containability" class="sym-layer" src="/game/uploads/warning_symbols/blank.png" alt="">
+            <img id="ease_of_use" class="sym-layer" src="/game/uploads/warning_symbols/blank.png" alt="">
+            <img id="danger_level" class="sym-layer" src="/game/uploads/warning_symbols/blank.png" alt="">
+        </div>
+    </div>
+
+    <div class="controls">
+        <!-- Type Menu -->
+        <div class="menu-group">
+            <label for="type-select">Type:</label>
+            <select id="type-select" onchange="changeLayer('type', this.value)">
+                <option value="">None</option>
+                <option value="/game/uploads/warning_symbols/biological.png">Biological</option>
+                <option value="/game/uploads/warning_symbols/kinetic.png">Kinetic</option>
+                <option value="/game/uploads/warning_symbols/psychological.png">Psychological</option>
+                <option value="/game/uploads/warning_symbols/spatial.png">Spatial</option>
+                <option value="/game/uploads/warning_symbols/temporal.png">Temporal</option>
+            </select>
+        </div>
+
+        <!-- Containability Menu -->
+        <div class="menu-group">
+            <label for="containability-select">Containability:</label>
+            <select id="containability-select" onchange="changeLayer('containability', this.value)">
+                <option value="">None</option>
+                <option value="/game/uploads/warning_symbols/containability_1.png">Level 1</option>
+                <option value="/game/uploads/warning_symbols/containability_2.png">Level 2</option>
+                <option value="/game/uploads/warning_symbols/containability_3.png">Level 3</option>
+                <option value="/game/uploads/warning_symbols/containability_4.png">Level 4</option>
+                <option value="/game/uploads/warning_symbols/containability_5.png">Level 5</option>
+            </select>
+        </div>
+
+        <!-- ease_of_use Menu -->
+        <div class="menu-group">
+            <label for="ease_of_use-select">Ease of Use:</label>
+            <select id="ease_of_use-select" onchange="changeLayer('ease_of_use', this.value)">
+                <option value="">None</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_1.png">Level 1</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_2.png">Level 2</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_3.png">Level 3</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_4.png">Level 4</option>
+                <option value="/game/uploads/warning_symbols/ease_of_use_5.png">Level 5</option>
+            </select>
+        </div>
+
+        <!-- danger_level Menu -->
+        <div class="menu-group">
+            <label for="danger_level-select">Danger Level:</label>
+            <select id="danger_level-select" onchange="changeLayer('danger_level', this.value)">
+                <option value="">None</option>
+                <option value="/game/uploads/warning_symbols/danger_level_1.png">Level 1</option>
+                <option value="/game/uploads/warning_symbols/danger_level_2.png">Level 2</option>
+                <option value="/game/uploads/warning_symbols/danger_level_3.png">Level 3</option>
+                <option value="/game/uploads/warning_symbols/danger_level_4.png">Level 4</option>
+                <option value="/game/uploads/warning_symbols/danger_level_5.png">Level 5</option>
+            </select>
+        </div>
+        <button onclick="downloadSymbol()" class="btn btn-primary">Download</button>
+    </div>
+</div>

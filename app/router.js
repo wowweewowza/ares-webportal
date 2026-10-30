@@ -151,6 +151,8 @@ Router.map(function() {
   this.route('wiki-tag', { path: '/wiki/tag/:id'});
   this.route('wiki-tags', { path: '/wiki/tags'});
 
+  this.route('warning-classification');
+
   setupCustomRoutes(this);
 
   // !!!!!!!!!!!!!!!!!!!!!!!!
